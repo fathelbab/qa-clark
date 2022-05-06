@@ -1,3 +1,231 @@
-body{
-  background-color:red;
+
+// body {
+//   background: url(http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/creampaper.png);
+//   text-align: center;
+//   color: #82C9C9;
+// }
+
+// div {
+//   position: absolute;
+//   left: 50%;
+//   top: 50%;
+//   transform: translate(-50%, -50%);
+//   width: 40%;
+//   padding: 20px;
+//   text-align: center;
+//   box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+//   text-shadow: 0 2px 1px hsla(0,0%,100%,.2);
+// }
+
+// h1 {
+//   font-size: 2.5em;
+//   margin-bottom: 0.2em;
+// }
+
+// p {
+//     padding-bottom: 3px;
+// }
+// Global style
+body {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background-color: #dcecec;
+}
+
+// Navbar section
+.navbar {
+  .navbar-brand {
+      margin-bottom: 0;
+      .navbar-brand-img {
+          height: 30px;
+      }
+  }
+}
+
+.page-content {
+  min-height: calc(100vh - 90px);
+  padding: 60px 16px 30px;
+  @media (min-width: 992px) {
+      padding: 120px 16px 30px;
+  }
+
+  .item-wrapper {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      // Question stem section
+      .question-wrapper {
+          white-space: break-spaces;
+          margin-bottom: 10px;
+          font-weight: 500;
+
+          .question-number {
+              color: #1a91a2;
+              font-size: 18px;
+              line-height: 2;
+          }
+          .question-stem-text {
+              color: #535353;
+              font-size: 20px;
+              line-height: 1.8;
+
+              @media (min-width: 992px) {
+                  font-size: 24px;
+              }
+          }
+      }
+      // Answer items section
+      .answer-wrapper {
+          margin-bottom: 50px;
+
+          // Answer Essay question section
+          textarea {
+              width: 100%;
+              min-height: 100px;
+              font-size: 20px;
+              color: #1a91a2;
+              resize: none;
+              background-color: #dcecec;
+              outline: none;
+              padding: 10px;
+              border-top: none;
+              border-left: none;
+              border-right: none;
+              border-bottom-color: #1a91a2;
+              transition: 0.4s all ease-in-out;
+
+              @media (min-width: 992px) {
+                  font-size: 30px;
+                  padding: 20px;
+                  min-height: 130px;
+              }
+
+              &:focus {
+                  outline: none;
+                  border-top: none;
+                  border-left: none;
+                  border-right: none;
+                  box-shadow: #1a91a2 0px 2px;
+              }
+          }
+
+          // Options section for MCQ question
+          .options-wrapper {
+              .option-wrapper {
+                  display: flex;
+                  align-items: center;
+                  color: #1a91a2;
+                  font-size: 18px;
+                  border: 1px solid #1a91a2;
+                  margin: 10px;
+                  padding: 3px 5px;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  transition: 0.4s all ease-in-out;
+
+                  &.active,
+                  &:hover {
+                      background-color: #1a91a24d;
+                  }
+
+                  .option-number {
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      font-size: 16px;
+                      min-width: 22px;
+                      height: 22px;
+                      background-color: #d8ebeb;
+                      border: 1px solid #1a91a299;
+                      line-height: 1;
+                      border-radius: 3px;
+                      padding: 2px 3px 1px;
+                      margin-right: 5px;
+                  }
+              }
+          }
+      }
+
+      // Submit button
+      .submit-btn {
+          font-size: 18px;
+          letter-spacing: 1px;
+          width: 100%;
+          @media (min-width: 992px) {
+              width: auto;
+              font-size: 20px;
+          }
+      }
+  }
+
+  // Next and Prev buttons actions
+  .item-actions {
+      margin-top: 70px;
+
+      .next-btn,
+      .prev-btn {
+          font-size: 16px;
+          @media (min-width: 992px) {
+              font-size: 20px;
+          }
+      }
+  }
+}
+
+// Thank you section
+.thank-you-msg-wrapper {
+  svg {
+      &.fa-circle-check {
+          font-size: 100px;
+          color: #1a91a2;
+          margin-bottom: 35px;
+      }
+  }
+  .thank-you-msg-text {
+      letter-spacing: 2px;
+      font-size: 40px;
+      margin-bottom: 50px;
+      text-align: center;
+      @media (min-width: 992px) {
+          font-size: 50px;
+      }
+  }
+
+  .thank-you-btn {
+      font-size: 20px;
+      letter-spacing: 1px;
+      width: 100%;
+      @media (min-width: 992px) {
+          width: auto;
+          font-size: 24px;
+      }
+  }
+}
+
+// Footer section
+.footer {
+  min-height: 30px;
+  padding: 5px;
+  .social-icons {
+      .social-icon-link {
+          text-decoration: none;
+          line-height: 1;
+          svg {
+              font-size: 20px;
+              &.fa-facebook {
+                  color: #1877f2;
+              }
+              &.fa-twitter-square {
+                  color: #1da1f2;
+              }
+              &.fa-instagram-square {
+                  color: #e4405f;
+              }
+          }
+      }
+  }
 }
