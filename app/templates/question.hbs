@@ -1,37 +1,88 @@
-{{page-title "Question"}}
+{{page-title 'Question'}}
+{{!-- {{#animated-each this.index use=this.transition}} --}}
 
+<div
+  class='page-content container-xl d-flex flex-column justify-content-between'
+>
+  {{!-- <QuestionComponent @model={{this.model}}/> --}}
+  {{!-- {{#each this.questions as |q|}} --}}
 
-        <div class="page-content container-xl d-flex flex-column justify-content-between">
-        <div class="item-wrapper">
-             <div class="question-wrapper d-flex align-items-start align-items-lg-center">
-                <span class="question-number">a-&#32;</span>
-                <span class="question-stem-text">Before we start, can we get your first name?</span>
-            </div>
+  <div class='item-wrapper'>
+    <div
+      class='question-wrapper d-flex align-items-start align-items-lg-center'
+    >
+      <span class='question-number'>-&#32;</span>
+      <span class='question-stem-text'>{{this.questions.headline}}</span>
+    </div>
+  </div>
 
-            <div class="answer-wrapper">
-                {{!-- template-lint-disable require-input-label --}}
-                <textarea class="" placeholder="Type your answer here..."></textarea>
+  <div class='question-wrapper d-flex align-items-start align-items-lg-center'>
+    <span class='question-stem-text'>{{this.questions.description}}</span>
+  </div>
+  {{#if (eq this.questions.question_type 'text')}}
 
-            </div>
+    {{! <div class='answer-wrapper'>
+      <textarea placeholder='Type your answer here...'></textarea>
 
-            <div class="d-flex justify-content-end">
-                <button class="submit-btn btn btn-light" type="button">Submit</button>
-            </div>
-
-        </div>
-
-        <div class="item-actions d-flex justify-content-between align-items-end">
-            <button class="next-btn btn btn-danger" type="button">
-                <i class="fa-solid fa-chevron-left mr-1"></i>
-                <span>Previous</span>
-            </button>
-            <button class="prev-btn btn btn-success" type="button">
-                <span>Next</span>
-                <i class="fa-solid fa-chevron-right ml-1"></i>
-            </button>
-        </div>
-
-
-
+    </div> }}
+    <div class='mb-3'>
+      <label for='formGroupExampleInput' class='form-label'>Your answer:
+        {{this.questions.description}}</label>
+      <Input
+        @type='text'
+        class='form-control'
+        id={{this.questions.identifier}}
+        placeholder='Type your answer here...'
+        key-press=''
+      />
     </div>
 
+    <div class='d-flex justify-content-end'>
+      <button class='submit-btn btn btn-light' type='button'>Submit</button>
+    </div>
+
+  {{else if (eq this.questions.question_type 'multiple-choice')}}
+    {{!-- {{#each this.questions.choices as |choice|}} --}}
+    {{#animated-each
+      this.questions.choices
+      use=this.transition
+      as |choice|
+    }}
+
+      <div class='option-wrapper'>
+        <label class='form-check-label' for='flexRadioDefault1'>
+          <input
+            type='radio'
+            value={{choice.value}}
+            name={{this.questions.identifier}}
+            {{!-- @checked={{this.isEmberized}} --}}
+            class='option-text'
+          />
+          {{choice.label}}
+        </label>
+      </div>
+    {{/animated-each}}
+    {{!-- {{/each}} --}}
+  {{/if}}
+
+  {{!-- {{/each}} --}}
+  <div class='item-actions d-flex justify-content-between align-items-end'>
+    <button
+      class='next-btn btn btn-danger'
+      type='button'
+      {{on 'click' this.decrement}}
+    >
+      <span>Previous</span>
+    </button>
+    <button
+      class='prev-btn btn btn-success'
+      type='button'
+      {{on 'click' this.increment}}
+    >
+      <span>Next</span>
+    </button>
+  </div>
+</div>
+{{!-- {{/animated-each}} --}}
+
+{{outlet}}
