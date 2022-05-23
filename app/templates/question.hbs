@@ -45,8 +45,8 @@
     </div>
 
   {{else if (eq this.questions.question_type 'multiple-choice')}}
-    {{#each this.questions.choices as |choice|}}
-    {{!-- {{#animated-each this.questions.choices use=this.transition as |choice|}} --}}
+    {{!-- {{#each this.questions.choices as |choice|}} --}}
+    {{#animated-each this.questions.choices use=this.transition as |choice|}}
 
       <div class='option-wrapper'>
         <label class='form-check-label' for='flexRadioDefault1'>
@@ -62,8 +62,8 @@
           {{choice.label}}
         </label>
       </div>
-    {{!-- {{/animated-each}} --}}
-    {{/each}}
+    {{/animated-each}}
+    {{!-- {{/each}} --}}
   {{/if}}
 
   {{!-- {{/each}} --}}
