@@ -17,10 +17,10 @@ module('Integration | Component | header-footer', function (hooks) {
     // Template block usage:
     await render(hbs`
       <HeaderFooter>
-        template block text
+        Clark coding challenge
       </HeaderFooter>
     `);
 
-    assert.dom(this.element).hasText('template block text');
+    assert.dom(this.element).hasText('Clark coding challenge');
   });
 });

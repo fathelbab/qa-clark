@@ -12,7 +12,8 @@ Goals/Priorities
 • Bonus: The design is responsive
 General remarks
 
-
+# Notes
+- I am a react developer and as requested i have tried to do the task in ember and i have tried my best to follow ember conventions :D 
 ## Mind Map
 - Load questions json object as a model 
 - Start creating the HTML markup 
@@ -21,7 +22,7 @@ General remarks
 - Display one question at a time
 - Be able to go through the list of questions back and forth
 - Display user answers
-- Save the user answer in some sort of state 
+- Save the user answer in some sort of state (@tracked variables)
 - Add animation support
 - Add test cases
 
