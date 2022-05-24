@@ -14,6 +14,8 @@
       <span class='question-number'>-&#32;</span>
       <span class='question-stem-text'>{{this.questions.headline}}</span>
     </div>
+    <label for='formGroupExampleInput' class='form-label'>Your answer:
+        {{this.questions.description}}</label>
   </div>
 
   <div class='question-wrapper d-flex align-items-start align-items-lg-center'>
@@ -26,8 +28,8 @@
 
     </div> }}
     <div class='mb-3'>
-      <label for='formGroupExampleInput' class='form-label'>Your answer:
-        {{this.questions.description}}</label>
+      {{!-- <label for='formGroupExampleInput' class='form-label'>Your answer:
+        {{this.questions.description}}</label> --}}
       <input
         type='text'
         class='form-control'
@@ -49,13 +51,12 @@
     {{#animated-each this.questions.choices use=this.transition as |choice|}}
 
       <div class='option-wrapper'>
-        <label class='form-check-label' for='flexRadioDefault1'>
+        <label >
           <input
             type='radio'
             value={{choice.value}}
             name={{this.questions.identifier}}
             {{!-- @checked={{this.isEmberized}} --}}
-            class='option-text'
             checked={{choice.selected}}
             onChange={{action 'onRadioButtonChange' this.questions choice.value}}
           />

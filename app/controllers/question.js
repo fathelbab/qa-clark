@@ -54,9 +54,8 @@ export default class QuestionController extends Controller {
         return { ...c, selected: false };
       }
     });
-    const final = (question.choices = updated_clone);
-    console.log('map', final);
-
-    console.log('after edit', this.questions_clone);
+    question.description = choice;
+    question.choices = updated_clone;
+    this.questions_clone = [...this.questions_clone, question];
   }
 }

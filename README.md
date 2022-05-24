@@ -1,7 +1,29 @@
 # clark-coding-challenge
+Task:
+- Write a small web application that enables a user to answer a questionnaire
+- Use the given questionnaire.json to derive the definition of a questionnaire
+- Use a modern client side MVC Framework like Ember (highly preferred), GlimmerVM(bleeding edge), or
+react (although we prefer ember J )
+Goals/Priorities
+• Show UX skills, use CSS and possibly animate the transition between questions (high priority)
+• At least 1 component test (not auto generated) (high priority)
+• Clean code and MVC based application structure (high priority)
+• There is no need to store results in a database
+• Bonus: The design is responsive
+General remarks
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+## Mind Map
+- Load questions json object as a model 
+- Start creating the HTML markup 
+- Load the data in the markup
+- Create styles
+- Display one question at a time
+- Be able to go through the list of questions back and forth
+- Display user answers
+- Save the user answer in some sort of state 
+- Add animation support
+- Add test cases
 
 ## Prerequisites
 
@@ -43,14 +65,4 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `ember build` (development)
 * `ember build --environment production` (production)
 
-### Deploying
 
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](https://emberjs.com/)
-* [ember-cli](https://cli.emberjs.com/release/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
